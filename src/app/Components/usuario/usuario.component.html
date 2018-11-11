@@ -1,0 +1,66 @@
+<h3>
+  Registro de Usuario Con Email y Contraseña <small>nombre ...</small>
+</h3>
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12 mx-auto mt-5">
+
+    <form (ngSubmit)="registrar()" #forma="ngForm">
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" [(ngModel)]="correo" name="correo" class="form-control" placeholder="Nombre del Heroe"
+          required>
+      </div>
+     
+      <div class="form-group">
+        <label>Contraseña</label>
+
+        <input type="text" [(ngModel)]="contrasena" name="contrasena" class="form-control" required>
+
+          
+
+
+      </div>
+      <div class="form-group">
+
+        <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Registrar Cambios</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 
+<h3>
+  Login Usuario <small>nombre ...</small>
+</h3>
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12 mx-auto mt-5">
+
+    <form (ngSubmit)="login()" #forma="ngForm">
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" [(ngModel)]="usu.correo" name="correo" class="form-control" placeholder="Nombre del Heroe"
+          required>
+      </div>
+     
+      <div class="form-group">
+        <label>Contraseña</label>
+
+        <input type="text" [(ngModel)]="usu.clave" name="clave" class="form-control" required>
+
+          
+
+
+      </div>
+      <div class="form-group">
+
+        <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Registrar Cambios</button>
+
+      </div>
+    </form>
+  </div>
+</div> -->

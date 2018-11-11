@@ -1,0 +1,67 @@
+<h1>Heroes</h1>
+<hr>
+
+
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12 text-right">
+    <button *ngIf="loading"  class="btn btn-outline-primary" type="button" name="button" [routerLink]="['/heroe','nuevo']" >
+      Nuevo Héroe
+    </button>
+    <button   class="btn btn-outline-primary" type="button" name="button" (onClick)="logOut()" >
+      Log Out
+    </button>
+  </div>
+</div>
+<br>
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Casa</th>
+            <th class="text-right">Opciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let k of heroes | keys; let i = index ">
+            <td>{{i+1}}</td>
+            <td> {{heroes[k].nombre}}</td>
+            <td> {{heroes[k].casa}}</td>
+            <td class="text-right w120">
+              <button [routerLink]="['/heroe',k]" type="button" class="btn btn-outline-success mr-2" data-toggle="modal"
+                data-target="#exampleModal">
+                Editar
+              </button>
+              <button (click)="eliminarHeroe(k)" type="button" class="btn btn-outline-danger">
+                Eliminar
+              </button>
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      
+    </div>
+    <div *ngIf="loading" class="col-md-12 mt-5 text-center">
+        
+            <i  class="fas fa-9x fa-sync fa-spin"  ></i>  
+    </div>
+
+  </div>
+
+</div>
+<!-- [routerLink]="['/heroe',k]" (click)="obtener(k)" -->
+
+
+
+
+   
+
+    
+      
